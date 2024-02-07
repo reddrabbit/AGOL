@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
+        
+        <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        </style>
+        <!-- Add references to CSS and JS libraries -->
+        <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.28/"></script>
+        
+        <script>
+            // Access the modules for mapping and configuration
+            require(["esri/config", "esri/WebMap","esri/views/MapView", "esri/widgets/ScaleBar", "esri/widgets/Legend"], 
+            function(esriConfig, WebMap, MapView, ScaleBar, Legend){
+                // Add api key to grant access to the basemap services
+              //Commented out Api Key. Allowed map to be displayed since it had public sharing option enabled.
+                //esriConfig.apiKey = "AAPKb3f636d465344c83932d6e187abb62bbdXRqRhcjDtpTRDzFMuBF3Do8AIkQ0w7IwIxU8plnKh6V44UOTKNR8vsYBenLRQHA";
+                //Initiate the webmap
+                const webmap = new WebMap({
+                    portalItem:{
+                        id: "d4b63cbb9ba040df8b5884d1f90def2d"
+                    }
+                });
+                //Create a mapview to set location of map to display
+                const view = new MapView({
+                    map: webmap,
+                    container: "viewDiv"
+                //Create the ScaleBar item
+                });
+                const scaleBar = new ScaleBar({
+                    view: view
+                });
+              //Use the view property to add the scaleBar
+                view.ui.add(scaleBar, "bottom-left")
+              //Create the Legend Item
+                const legend = new Legend({
+                    view: view
+                });
+                view.ui.add(legend, "bottom-right")
+            });
+        </script>
+    </head>
+    <body>
+        <!-- Container to host the map -->
+        <div id="viewDiv"></div>
+    </body>
+</html>
