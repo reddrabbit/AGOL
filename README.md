@@ -1,19 +1,19 @@
 # BUG REPORT
-Bug: Basemap Load Failure 
+**Bug**: Basemap Load Failure 
 
  
 
-Bug Status: On-hold 
+**Bug Status**: On-hold 
 
  
 
-Description: 
+**Description**: 
 
 Trying to load the arcgis topographic basemap results in a series of invalid token errors and ultimately a failure to load that basemap style with the generated API key. A few solutions were presented where we could change the value from "arcgis/topographic" to "arcgis-topographic", but the latter fix does not load 100% of the basemap. Just the hillshade is presented. 
 
  
 
-Steps to reproduce the bug: 
+**Steps to reproduce the bug**: 
 
 Step 1: 
 
@@ -27,10 +27,8 @@ In the same line, change the value to "arcgis-topographic", and the same error s
 
  
 
-Expected Results: 
-
+**Expected Results**: 
 Result from Step 1: 
-
 You should be faced with a white background and a control button to zoom in and out of the screen. 
 
  
@@ -41,8 +39,7 @@ You should be faced with a white background and a control button to zoom in and 
 
  
 
-Result from Step 2: 
-
+**Result from Step 2**: 
 You should be met with a hillshade of the map's center, and the zoom control buttons on the top left of the page. 
 
  
@@ -51,7 +48,7 @@ You should be met with a hillshade of the map's center, and the zoom control but
 
  
 
-Environment settings: 
+**Environment settings**: 
 
 Browser: Google Chrome 
 
@@ -61,9 +58,8 @@ Working IDE: Visual Studio Code, and GITHUB
 
  
 
-Scope of the issue: 
-
-Local, affects a fairly large percentage of the class.  
+**Scope of the issue**: 
+Affects a fairly large percentage of the class.  
 
  
 
