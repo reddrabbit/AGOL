@@ -4,10 +4,38 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>ArcGIS Maps SDK for JavaScript Tutorials: Add a feature layer</title>
   <style>
+
+    *{
+      box-sizing: border-box;
+    }
+
     html, body, #viewDiv {
       padding: 0;
       margin: 0;
       height: 100%;
+      width: 100%;
+    }
+
+    .header {
+      text-align: left;
+      background: #182c42;
+      color: rgb(255, 255, 255);
+      height: 40px;
+      display: flex;
+      align-items: center;
+      font-weight: bolder;
+      font-size: 24pt;
+    }
+
+    .header img {
+      height: 40px;
+      margin: 0 8px 0 8px;
+    }
+    /* -----------Calculating height inspo gotten from the ESRI Online Community------------------ */
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: calc(100% - 40px);
       width: 100%;
     }
   </style>
@@ -39,14 +67,16 @@ view.ui.add(scaleBar, "bottom-left")
 const legend = new Legend({
     view: view
 });
-view.ui.add(legend, "bottom-right")
+view.ui.add(legend, "top-right")
 
-  
   });
 </script>
 
 </head>
 <body>
+
+  <div class="header"><img src="10053893.png" />Fourteen wonders of the world</div>
+  
   <div id="viewDiv"></div>
 </body>
 </html
