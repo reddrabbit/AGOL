@@ -1,45 +1,48 @@
-
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
 
-    <style>
-      html,
-      body,
-      #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-      }
-    </style>
-    <!-- Reference the API -->
-    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
-    <script src="https://js.arcgis.com/4.28/"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS Developers Guide: Display a map (2D)</title>
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
 
-    <script>
-    require(["esri/config", "esri/Map", "esri/views/MapView"], function(esriConfig, Map, MapView) {
-    
-    esriConfig.apiKey = "AAPK4a4a1c292e1a43d7987bdaaf937fe9d8ZIK5kDSjMJovPRiRCuvJ4cmoSOquKolr1RoXIBt4rWfu7be5z9s7dOFFSYl9XCsW";
-    
-    const map = new Map({
+  <link rel="stylesheet" href="https://js.arcgis.com/4.19/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.19/"></script>
+
+  <script>
+    require([
+     "esri/config",
+      "esri/Map",
+      "esri/views/MapView"
+    ], function (esriConfig,Map, MapView) {
+
+      esriConfig.apiKey = "AAPK4a4a1c292e1a43d7987bdaaf937fe9d8ZIK5kDSjMJovPRiRCuvJ4cmoSOquKolr1RoXIBt4rWfu7be5z9s7dOFFSYl9XCsW";
+      const map = new Map({
         basemap: "arcgis-topographic" // Basemap layer
-    });
+      });
 
-    const view = new MapView({
+      const view = new MapView({
         map: map,
-        center: [-118.805, 34.027], // Longitude, latitude
-        zoom: 13, // Zoom level
-        container: "viewDiv" // Div element
-    });
-        
-    });
-    </script>
+        center: [-118.805, 34.027],
+        zoom: 13, // scale: 72223.819286
+        container: "viewDiv",
+      });
 
-  </head>
-  <body>
-    <div id="viewDiv"></div>
-  </body>
+    });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
 </html>
