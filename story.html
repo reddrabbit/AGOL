@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS Maps SDK for JavaScript Tutorials: Add a feature layer</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.28/"></script>
+
+  <script>
+  require(["esri/config","esri/WebMap","esri/views/MapView","esri/widgets/ScaleBar", "esri/widgets/Legend"], 
+    function(esriConfig, WebMap, MapView, ScaleBar, Legend) {
+  //APIKEY
+//Referencing a webmap item i created and hosted on AGOL
+  const webmap = new WebMap({
+    portalItem:{
+    id: "a148ad36c8794a23aa89ba43f6718c0a"}
+  });
+//Crete the mapView
+//Create a mapview to set location of map to display
+const view = new MapView({
+    map: webmap,
+    container: "viewDiv"
+//Create the ScaleBar item
+});
+const scaleBar = new ScaleBar({
+    view: view
+});
+//Use the view property to add the scaleBar
+view.ui.add(scaleBar, "bottom-left")
+//Create the Legend Item
+const legend = new Legend({
+    view: view
+});
+view.ui.add(legend, "bottom-right")
+
+  
+  });
+</script>
+
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html
