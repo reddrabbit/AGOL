@@ -1,0 +1,59 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Modern and Ancient World Wonders</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.28/"></script>
+
+  <script>
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+
+    "esri/layers/FeatureLayer"
+
+  ], function(esriConfig, Map, MapView, FeatureLayer) {
+
+  //esriConfig.apiKey = "AAPK4a4a1c292e1a43d7987bdaaf937fe9d8ZIK5kDSjMJovPRiRCuvJ4cmoSOquKolr1RoXIBt4rWfu7be5z9s7dOFFSYl9XCsW";
+
+  const map = new Map({
+    basemap: "osm"
+  });
+
+  const view = new MapView({
+    container: "viewDiv",
+    map: map,
+    center: [8.900515769403576,15.372527058161095],
+    zoom: 3
+  });
+
+  const popupWonders = {
+        "title": "Wonders of the World!",
+        "content": "<b>Name:</b> {Name}<br><b>Location:</b> {Location}<br><b>Era:</b> {era}<br><b>Year Built:</b> {establishedYear}<br><b>Designer:</b>{createdBy}"
+      }
+    const wonders = new FeatureLayer({
+        url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/world_wonders/FeatureServer",
+        outFields: ["NAME","Location","era","establishedYear","createdBy"],
+        popupTemplate: popupWonders
+      });
+
+      map.add(wonders);
+
+  });
+</script>
+
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>
