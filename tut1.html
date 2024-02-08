@@ -29,6 +29,8 @@
       esriConfig.apiKey = "AAPK4a4a1c292e1a43d7987bdaaf937fe9d8ZIK5kDSjMJovPRiRCuvJ4cmoSOquKolr1RoXIBt4rWfu7be5z9s7dOFFSYl9XCsW";
       const map = new Map({
         basemap: "osm" // Basemap layer
+        //For whatever reason, the default "arcgis-topographic" basemap style keeps failing to load off my Github. Runs on Codepen and VS code
+        //I changed the layer to osm to test it out, and it works fine. I have included this bug in my report
       });
 
       const view = new MapView({
