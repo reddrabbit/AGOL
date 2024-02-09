@@ -26,12 +26,10 @@ You should be faced with a white background and a control button to zoom in and 
 **Result from Step 2**: 
 You should be met with a hillshade of the map's center, and the zoom control buttons on the top left of the page. 
 
+
 **Environment settings**: 
-
 Browser: Google Chrome 
-
 OS: Windows 10 
-
 Working IDE: Visual Studio Code, and GITHUB 
 
 **Scope of the issue**: 
@@ -39,6 +37,7 @@ Affects a fairly large percentage of the class.
 
  
 **Browser Console Errors**: 
+
 Step 1: 
 ![Error from the tutorial](Errors/consoleError1.png)
 Step2: 
