@@ -1,4 +1,6 @@
 # BUG REPORT
+#I have made changes to the original tutorial and the basemap loads fine for me, but i have made this report to document the initial tutorial's steps that 
+failed to work.
 **Bug**: Basemap Load Failure 
 
  
@@ -13,10 +15,12 @@ Trying to load the arcgis topographic basemap results in a series of invalid tok
 **Steps to reproduce the bug**: 
 Step 1: 
 In the line of code that accepts the basemap parameter, enter "arcgis/topographic"  as the value for the "basemap", and then enable an APIkey and you should be able to generate the error in the console 
+Make sure the APIKey is not commented out
 ![Error from the tutorial](Errors/expectedError1.png)
 
 Step 2: 
 In the same line, change the value to "arcgis-topographic",and then enable an APIkey and the same error should persist. 
+Make sure the APIKey is not commented out
 ![Error from the tutorial](Errors/expectedError2.png)
 
 
