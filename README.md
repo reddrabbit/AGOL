@@ -13,9 +13,12 @@ Trying to load the arcgis topographic basemap results in a series of invalid tok
 **Steps to reproduce the bug**: 
 Step 1: 
 In the line of code that accepts the basemap parameter, enter "arcgis/topographic"  as the value for the "basemap", and then enable an APIkey and you should be able to generate the error in the console 
+![Error from the tutorial](Errors/expectedError1.png)
 
 Step 2: 
 In the same line, change the value to "arcgis-topographic",and then enable an APIkey and the same error should persist. 
+![Error from the tutorial](Errors/expectedError2.png)
+
 
 **Expected Results**: 
 Result from Step 1: 
