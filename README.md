@@ -40,12 +40,9 @@ Affects a fairly large percentage of the class.
  
 **Browser Console Errors**: 
 Step 1: 
-[esri.layers.FeatureLayer] #load() Failed to load layer (title: 'World wonders', id: '18d8ad1e06b-layer-0') 
-{error: f} 
-  error: f 
-  details: {url: 'https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/world_wonders/FeatureServer } 
-  message: "Invalid token." 
-  name: "request:server" 
+![Error from the tutorial](Errors/consoleError1.png)
+Step2: 
+![Error from the tutorial](Errors/consoleError2.png)
  
 
  
