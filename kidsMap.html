@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Discover Canada
+        </title>
+        <style>
+             html, body{
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                width: 100%;
+                background-color: rgb(241, 240, 240);
+            }
+
+            #viewDiv {
+                padding: 0;
+                margin: auto;
+                height:100%;
+                width: 95%;
+                border: solid black 4px;
+            }
+
+            #head{
+                margin: 0;
+                padding: 0;
+                background-color: rgb(255, 205, 147);
+            }
+
+            #head h1{
+                margin-left: 12px;
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-style: italic;
+            }
+
+            #main{
+                margin: 10px;
+                text-align:justify ;
+            }
+
+            #stopper{
+                font-weight: bolder;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: large;
+            }
+
+            #cont{
+                font-weight: normal;
+                font-size: medium;
+            }
+
+        </style>
+        <!-- Link CS AND JS API -->
+        <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.28/"></script>
+      <!-- JS Scripts -->
+        <script>
+        require(["esri/config","esri/WebMap","esri/views/MapView","esri/widgets/ScaleBar", "esri/widgets/Legend"], 
+          function(esriConfig, WebMap, MapView, ScaleBar, Legend) {
+
+    
+        const webmap = new WebMap({
+          portalItem:{
+          id: "8dbb3944b13447b18d3dbba9f5b3db86"}
+        });
+
+      const view = new MapView({
+          map: webmap,
+          container: "viewDiv"
+      //ScaleBar item
+      });
+      const scaleBar = new ScaleBar({
+          view: view
+      });
+      //Use the view property to add the scaleBar
+      view.ui.add(scaleBar, "bottom-left")
+      //Legend Item
+      const legend = new Legend({
+          view: view
+      });
+      view.ui.add(legend, "bottom-right")
+      
+        });
+      </script>
+    </head>
+    <body>
+        <div id="head">
+            <h1>Discovery.org</h1>
+        </div>
+
+        <section id="main">
+            <p> <strong>Welcome!</strong> Young explorers, to the fascinating world of Canadian provinces and territories! Get ready to dive into the colorful map of Canada, where each click unlocks a treasure trove of exciting facts and wonders waiting to be discovered. From the icy tundra of Nunavut to the bustling cities of Ontario, there's so much to explore right at your fingertips! Join us on this interactive journey as we uncover the secrets of Canada's diverse cultures, wildlife, and landmarks. So grab your mouse and let's embark on a virtual adventure across the Great White North! Get ready to explore Canada like never before, one click at a time!</p>
+            <p id="stopper">But hold on just a second! <span id="cont">Before you get on with clicking and zooming about the map, we would like to give you a brief intro on the history of Canada. Don't worry, you won't have to read for too long🙂</span></p>
+            <P>Canada is a seriously huge country! Measuring a massive 4,600km from the north to the south, the country covers more than half of the Northern Hemisphere.....Elsa from frozen would totally love it here. The country has a total of 6 different time zones and is the second largest country in the world, just behind Russia.</P>
+            <p>The first people to have graced Canada's lands did that 15,000 to 30,000 years ago across a land bridge that connected Asia and North America. A viking guy, Leif Eriksson stumbled upon Newfoundland and tried to start a life here, but that didn't last very long....poor Eriksson. A while later, the French and British people came in to live in Canada. There were some wars between farmers and fur traders, about 4 wars between 1689 and 1763....That's a lot of fighting. The final war, called the French and Indian War, left the British people in control of Canada. In 1867, Ontario, Quebec, Nova Scotia, and New Brunswick united to establish a dominion equipped with its own governance system, parliamentary body, and prime minister. Manitoba became a part of this dominion shortly afterward. Canada attained its independence as a sovereign nation in 1931. After undergoing various territorial adjustments throughout its history, Canada currently comprises ten provinces and three territories.</p>
+            
+            <h2>Click on the coloured parts of the map to learn about Canada's Provinces & Territories. If you zoom in a little, you'd be able to see the capitals!</h2>
+            <h3>See if you can get the capitals for every province and territory. Happy learning!</h3>
+        
+        </section>
+        <div id="viewDiv"></div>
+
+    </body>
+</html>
